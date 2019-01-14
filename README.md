@@ -19,7 +19,7 @@ The page will reload if you make edits.<br>
 -Then you select what item you want to buy based on the prices listed on the machine<br>
 -After you picked a product just type it using the keybord below the screen<br>
 -You press Enter and the product will fall in the square below<br>
--When you are done you can withdraw your remainig credit.
+-When you are done you can withdraw your remaining credit.
 
 ## Author :
 **Nistor Sergiu Cosmin** - _Front End Web Developer_
