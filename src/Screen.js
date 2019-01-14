@@ -5,7 +5,7 @@ class Screen extends Component {
     return (
       <div className="screen">
       <p>Credits: {this.props.credit}</p>
-      <p>Your Pick:</p>
+      <p>Your Pick: {this.props.query}</p>
       <p>This is the message!</p>
       </div>
     )
