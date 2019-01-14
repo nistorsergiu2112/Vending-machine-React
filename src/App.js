@@ -8,6 +8,8 @@ class App extends Component {
     this.handleDataQuery = this.handleDataQuery.bind(this);
     this.handleCredits = this.handleCredits.bind(this);
     this.state = {
+      /* I expected to use these but ended up not using them
+      and i only kept them to show that i know how get from child to parent */
       fromChildQuery: "",
       fromChildCredits: 0
     }
@@ -28,6 +30,7 @@ handleCredits(credits) {
   render() {
     return (
       <div className="App">
+        <header className="title">vending machine</header>
         <div className="glass">
           <ul className="grid-9">
             <li className="text product-1" id="1">Product 1  (2$)</li>

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Screen from './Screen'
-const prices = [
+
+/* The object that contains all the necessary information about the products */
+
+const products = [
   {id: "1", value: 2, color: "#FCA9A8"},
   {id: "2", value: 3, color: "#4E7082"},
   {id: "3", value: 2.5, color: "#8DBDC4"},
@@ -23,7 +26,7 @@ class FrontPanel extends Component {
       }
   }
 
-/*function to clear query*/
+/* function to clear the whole screen */
 clearScreen = () => {
     this.setState({
       credit: 0,
@@ -31,14 +34,16 @@ clearScreen = () => {
       message: "Please select a product!"
     })
   }
-/* function to add credit */
+/* function to add credit in the vending machine */
 addCredit = (credit) => {
   this.setState(prevState => ({
   credit: prevState.credit + 1
 }), () => {
   this.onChangeCredits()
 })}
+
 /* function that manages the keybord + added onChangeQuery in the callback */
+
 addToQuery = (id) => {
        this.setState(prevState => ({
           query: prevState.query + id
@@ -46,7 +51,9 @@ addToQuery = (id) => {
        this.onChangeQuery()
     })
   }
+
 /* function that sends data to parent */
+
 onChangeQuery = () => {
   this.props.handlerFromParent(this.state.query)
 }
@@ -75,7 +82,7 @@ buyMessage = () => {
 
 changeColor = (id) => {
   var newID = id - 1;
-  this.refs.product.style.backgroundColor = prices[newID].color;
+  this.refs.product.style.backgroundColor = products[newID].color;
 }
 resetColor = () => {
   this.refs.product.style.backgroundColor = "white";
@@ -84,7 +91,7 @@ resetColor = () => {
 
 buy = () => {
   var currentQuery = this.state.query
-  var product = prices.filter(number => number.id === currentQuery);
+  var product = products.filter(number => number.id === currentQuery);
   var money = this.state.credit;
   if (product && product[0] && money >= product[0].value) {
     this.calculateRest(money, product[0].value);
