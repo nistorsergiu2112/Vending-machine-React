@@ -27,6 +27,7 @@ class FrontPanel extends Component {
   }
 
 /* function to clear the whole screen */
+
 clearScreen = () => {
     this.setState({
       credit: 0,
