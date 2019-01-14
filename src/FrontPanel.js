@@ -42,7 +42,7 @@ addCredit = (credit) => {
   this.onChangeCredits()
 })}
 
-/* function that manages the keybord + added onChangeQuery in the callback */
+/* function that manages the keybord + added callback onChangeQuery */
 
 addToQuery = (id) => {
        this.setState(prevState => ({
@@ -57,28 +57,42 @@ addToQuery = (id) => {
 onChangeQuery = () => {
   this.props.handlerFromParent(this.state.query)
 }
+
 /* function that sends credits to parent */
+
 onChangeCredits = () => {
   this.props.creditsHandler(this.state.credit)
 }
+
+/* function that calculates the rest, used in the main buy function */
+
 calculateRest = (money, cost) => {
   let newCredit = money - cost;
   this.setState({ credit: newCredit})
 }
+
+/* clears query */
+
 clearQuery = () => {
     this.setState({
       query: ""
     })
   }
 
+/* Resets the message on the screen to default */
+
 clearMessage = () => {
   this.setState({message: "Please select a product!"})
 }
+
+/* Timed message for after you buy */
 
 buyMessage = () => {
   this.setState({ message: "Thank you for your purchase!"})
   setTimeout( () => {this.clearMessage()},2000)
   }
+
+/* functions used to change the color of the div */
 
 changeColor = (id) => {
   var newID = id - 1;
@@ -88,6 +102,7 @@ resetColor = () => {
   this.refs.product.style.backgroundColor = "#0b0b0b";
 }
 
+/* The main buy function that manages everything */
 
 buy = () => {
   var currentQuery = this.state.query
