@@ -33,15 +33,15 @@ handleCredits(credits) {
         <header className="title">vending machine</header>
         <div className="glass">
           <ul className="grid-9">
-            <li className="text product-1" id="1">Product 1  (2$)</li>
-            <li className="text product-2" id="2">Product 2  (3$)</li>
-            <li className="text product-3" id="3">Product 3  (2,5$)</li>
-            <li className="text product-4" id="4">Product 4  (5,5$)</li>
-            <li className="text product-5" id="5">Product 5  (2,75$)</li>
-            <li className="text product-6" id="6">Product 6  (1,25$)</li>
-            <li className="text product-7" id="7">Product 7  (7,5$)</li>
-            <li className="text product-8" id="8">Product 8  (2$)</li>
-            <li className="text product-9" id="9">Product 9  (4,25$)</li>
+            <li className="text product-1" id="1">ITEM 1  2$</li>
+            <li className="text product-2" id="2">ITEM 2  3$</li>
+            <li className="text product-3" id="3">ITEM 3  2,5$</li>
+            <li className="text product-4" id="4">ITEM 4  5,5$</li>
+            <li className="text product-5" id="5">ITEM 5  2,75$</li>
+            <li className="text product-6" id="6">ITEM 6  1,25$</li>
+            <li className="text product-7" id="7">ITEM 7  7,5$</li>
+            <li className="text product-8" id="8">ITEM 8  2$</li>
+            <li className="text product-9" id="9">ITEM 9  4,25$</li>
             </ul>
 
       </div>

@@ -85,7 +85,7 @@ changeColor = (id) => {
   this.refs.product.style.backgroundColor = products[newID].color;
 }
 resetColor = () => {
-  this.refs.product.style.backgroundColor = "white";
+  this.refs.product.style.backgroundColor = "#0b0b0b";
 }
 
 
@@ -122,26 +122,24 @@ buy = () => {
             <button className="button" onClick={this.buy}>Enter</button>
             <button className="button" onClick={this.clearScreen}>Take Change</button>
             <button className="button" onClick={this.clearQuery}>Clear Selection</button>
-
-
-            </div>
+          </div>
 
           <div className="keybord-layout">
-          <div className="keybord">
-          <button onClick={e => this.addToQuery(e.target.id)} id="1">1</button>
-          <button onClick={e => this.addToQuery(e.target.id)} id="2">2</button>
-          <button onClick={e => this.addToQuery(e.target.id)} id="3">3</button>
-          <button onClick={e => this.addToQuery(e.target.id)} id="4">4</button>
-          <button onClick={e => this.addToQuery(e.target.id)} id="5">5</button>
-          <button onClick={e => this.addToQuery(e.target.id)} id="6">6</button>
-          <button onClick={e => this.addToQuery(e.target.id)} id="7">7</button>
-          <button onClick={e => this.addToQuery(e.target.id)} id="8">8</button>
-          <button onClick={e => this.addToQuery(e.target.id)} id="9">9</button>
-          <button onClick={e => this.addToQuery(e.target.id)} id="0">0</button>
-          </div>
+            <div className="keybord">
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="1">1</button>
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="2">2</button>
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="3">3</button>
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="4">4</button>
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="5">5</button>
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="6">6</button>
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="7">7</button>
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="8">8</button>
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="9">9</button>
+              <button className="button" onClick={e => this.addToQuery(e.target.id)} id="0">0</button>
+            </div>
           </div>
           <div className="opening" ref="product" onClick={this.resetColor} title="Click me to grab product">
-        </div>
+          </div>
       </div>
     )
   }
