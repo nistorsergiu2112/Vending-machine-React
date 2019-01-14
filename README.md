@@ -16,7 +16,7 @@ The page will reload if you make edits.<br>
 ## Instructions to use the machine:
 
 -First you add credits by pressing the Add Credit button<br>
--Then you select what item you want to buy based on the prices listed on the machine
+-Then you select what item you want to buy based on the prices listed on the machine<br>
 -You press Enter and the product will fall in the square below the machine.
 
 ## Author :
