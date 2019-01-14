@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import Screen from './Screen'
 const prices = [
-  {id: "1", value: 2},
-  {id: "2", value: 3},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {},
-  {}
+  {id: "1", value: 2, color: "#FCA9A8"},
+  {id: "2", value: 3, color: "#4E7082"},
+  {id: "3", value: 2.5, color: "#8DBDC4"},
+  {id: "4", value: 5.5, color: "#BD547A"},
+  {id: "5", value: 2.75, color: "#3566A2"},
+  {id: "6", value: 1.25, color: "#F4EDD8"},
+  {id: "7", value: 7.5, color: "#9E3C7E"},
+  {id: "8", value: 2, color: "#3D3269"},
+  {id: "9", value: 4.25, color: "#DCAF68"}
 ]
 
 class FrontPanel extends Component {
   constructor(){
     super()
+    this.clearMessage = this.clearMessage.bind(this);
     this.state = {
         credit: 0,
-        query: ""
+        query: "",
+        message: "Please select a product!"
       }
   }
 
@@ -25,7 +27,8 @@ class FrontPanel extends Component {
 clearScreen = () => {
     this.setState({
       credit: 0,
-      query: ""
+      query: "",
+      message: "Please select a product!"
     })
   }
 /* function to add credit */
@@ -44,7 +47,7 @@ addToQuery = (id) => {
     })
   }
 /* function that sends data to parent */
- onChangeQuery = () => {
+onChangeQuery = () => {
   this.props.handlerFromParent(this.state.query)
 }
 /* function that sends credits to parent */
@@ -61,16 +64,39 @@ clearQuery = () => {
     })
   }
 
+clearMessage = () => {
+  this.setState({message: "Please select a product!"})
+}
+
+buyMessage = () => {
+  this.setState({ message: "Thank you for your purchase!"})
+  setTimeout( () => {this.clearMessage()},2000)
+  }
+
+changeColor = (id) => {
+  var newID = id - 1;
+  this.refs.product.style.backgroundColor = prices[newID].color;
+}
+resetColor = () => {
+  this.refs.product.style.backgroundColor = "white";
+}
+
+
 buy = () => {
   var currentQuery = this.state.query
   var product = prices.filter(number => number.id === currentQuery);
   var money = this.state.credit;
-  if (money >= product[0].value) {
+  if (product && product[0] && money >= product[0].value) {
     this.calculateRest(money, product[0].value);
     this.clearQuery();
+    this.buyMessage();
+    this.changeColor(currentQuery);
+  }
+  else if(product.length !== 1){
+    this.setState({ message: "Please choose a different product"})
   }
   else {
-    console.log("you can't buy");
+    this.setState({ message: "You don't have enought money!"})
   }
 }
 
@@ -81,11 +107,16 @@ buy = () => {
 
           <Screen
             credit={this.state.credit}
-            query={this.state.query}/>
+            query={this.state.query}
+            message={this.state.message}/>
           <div className='buttons'>
             <button className="button" onClick={this.addCredit}>Add Credit</button>
             <button className="button" onClick={this.clearScreen}>Clear</button>
             <button className="button" onClick={this.buy}>Enter</button>
+            <button className="button" onClick={this.clearScreen}>Take Change</button>
+            <button className="button" onClick={this.clearQuery}>Clear Selection</button>
+
+
             </div>
 
           <div className="keybord-layout">
@@ -102,6 +133,8 @@ buy = () => {
           <button onClick={e => this.addToQuery(e.target.id)} id="0">0</button>
           </div>
           </div>
+          <div className="opening" ref="product" onClick={this.resetColor} title="Click me to grab product">
+        </div>
       </div>
     )
   }

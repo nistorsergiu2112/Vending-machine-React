@@ -30,20 +30,17 @@ handleCredits(credits) {
       <div className="App">
         <div className="glass">
           <ul className="grid-9">
-            <li className="text product-1" id="1" value={2}>1</li>
-            <li className="text product-2" id="2" value={3}>2</li>
-            <li className="text product-3" id="3">3</li>
-            <li className="text product-4" id="4">4</li>
-            <li className="text product-5" id="5">5</li>
-            <li className="text product-6" id="6">6</li>
-            <li className="text product-7" id="7">7</li>
-            <li className="text product-8" id="8">8</li>
-            <li className="text product-9" id="9">9</li>
+            <li className="text product-1" id="1">Product 1  (2$)</li>
+            <li className="text product-2" id="2">Product 2  (3$)</li>
+            <li className="text product-3" id="3">Product 3  (2,5$)</li>
+            <li className="text product-4" id="4">Product 4  (5,5$)</li>
+            <li className="text product-5" id="5">Product 5  (2,75$)</li>
+            <li className="text product-6" id="6">Product 6  (1,25$)</li>
+            <li className="text product-7" id="7">Product 7  (7,5$)</li>
+            <li className="text product-8" id="8">Product 8  (2$)</li>
+            <li className="text product-9" id="9">Product 9  (4,25$)</li>
             </ul>
 
-
-            <div className="opening">
-          </div>
       </div>
         <FrontPanel handlerFromParent={this.handleDataQuery}
                     creditsHandler={this.handleCredits}

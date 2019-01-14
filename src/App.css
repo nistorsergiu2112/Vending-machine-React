@@ -10,7 +10,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  width: 120vmin;
+  width: 105vmin;
   height: 100px;
   grid-gap: 2em;
   margin: 0 auto;
@@ -118,5 +118,14 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-
+  margin-top: 170px;
+  margin-left: 108px;
+  position: absolute;
+}
+.screen {
+  margin-left: 333px;
+}
+.buttons {
+  margin-left: 333px;
+  display: inline-grid;
 }
